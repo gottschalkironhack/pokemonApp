@@ -1,3 +1,108 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+	"extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
+  "parser": "@typescript-eslint/parser",
+	"settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+		"import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+	},
+  "plugins": [
+   	"babel",
+   	"react-hooks",
+    "prefer-arrow",
+		"eslint-plugin-react",
+		"@next/eslint-plugin-next",
+   	"@typescript-eslint/eslint-plugin",
+		"@typescript-eslint"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true 
+  },
+  "rules": {
+		"import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   	],
+    "new-cap": [
+      2,
+      {
+        "capIsNewExceptions": [
+          "Map",
+          "List"
+        ]
+      }
+    ],
+    "no-unused-vars": [
+      2,
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+   	"indent": ["error", "tab"],
+		"react/jsx-indent": ["error", "tab"],
+		"react/jsx-indent-props": 0,
+    "no-tabs": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "always-multiline"
+      }
+    ],
+		"import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.jest.tsx",
+					"**/mocks/*"
+        ]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          [
+            "sibling",
+            "parent"
+          ],
+          "index"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+  	"react/jsx-filename-extension": "off",
+  	"react-hooks/rules-of-hooks": "error",
+   	"react-hooks/exhaustive-deps": "error",
+  	"react/button-has-type": "off",
+		"react/require-default-props": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/destructuring-assignment": "off",
+		"react/prop-types": "off",
+		"implicit-arrow-linebreak": "off",
+    "operator-linebreak": "off",
+		"consistent-return": "off",
+		"arrow-parens": "off",
+		"curly": "off"
+  }
 }
